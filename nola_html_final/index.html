@@ -1,0 +1,206 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Nueva Orleans | Exploración a través de los datos</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Codystar&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&family=Codystar&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css">
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Barra de información -->
+  <div class="topnav">
+
+    <!-- Centered link -->
+    <div class="topnav-centered">
+      <a href="#home" class="active">inicio</a>
+    </div>
+
+    <!-- Left-aligned links (default) -->
+    <a href="https://www3.centro.edu.mx/" target="_blank">CENTRO</a>
+    <a href="https://www3.centro.edu.mx/Posgrados/visualizacion-de-datos.html" target="_blank">EVD.2021</a>
+
+    <!-- Right-aligned links -->
+    <div class="topnav-right">
+      <a href="#map-container">mapa nocturno</a>
+      <a href="#popmap">mapa de datos</a>
+    </div>
+
+  </div>
+  <!-- Header -->
+  <header id="home">
+    <div class="header-content">
+      <div class="header-content-inner">
+        <h1>nueva orleans</h1>
+        <p>una exploración a través del territorio y una década de delitos graves</p>
+      </div>
+    </div>
+  </header>
+
+  <div>
+    <img src="images/nueva_orleans.jpg" alt="" style="width: 100%" ; "height= 100%">
+  </div>
+
+  <!-- Intro Section -->
+  <section class="intro">
+    <p class="text-light">Este trabajo nace de la fascinación por la ciudad conocida como <i> Crescent City</i>. Y por sus imágenes satelitales nocturnas.</p>
+    <p class="text-light">También desde una pregunta:</p>
+    <h2 class="section-heading">¿Se puede entender la intensidad lumínica en el espacio urbano como un indicador de seguridad?</h2>
+    <h2 class="section-heading">¿Esa intensidad contribuye a inhibir los delitos más graves?</h2>
+    <p class="text-light">El siguiente mapa muestra -sobre una fotografía satelital- la localización de los homicidios que tuvieron lugar en la ciudad de Nueva Orleans entre los años de 2008 a 2018 (de acuerdo a una investigación del Washington
+      Post). Aunque el mapa muestra coincidencias sugerentes -quizás más relacionadas con la morfología urbana o la densidad poblacional- no podemos olvidar que el territorio del delito es mucho más complejo.
+    </p>
+    <p class="text-light"></p>
+  </section>
+
+  <!-- MAPA -->
+  <div id="map-container">
+    <div id="before" class="map" style="position:absolute;"></div>
+    <div id="after" class="map" style="position:absolute;"></div>
+  </div>
+
+  <!-- Segunda intro -->
+  <section class="segunda_intro" id="seccion">
+    <h2 class="section-heading">Cada localización en el mapa es una historia. Detrás de cada dato, una persona.</h2>
+    <p class="text-light">Ningún territorio urbano, así como ningún fenómeno social complejo como la inseguridad, puede ser entendido sin el componente humano.</p>
+    <p class="text-light">Con un click, conoce en el siguiente mapa algo más sobre las víctimas de estos crímenes, aléjate para explorar las historias similares de otras ciudades de los Estados Unidos</p>
+  </section>
+
+  <div id='popmap'></div>
+
+  <!-- Tercera intro -->
+  <section class="tercera_intro" id="seccion">
+    <h2 class="section-heading">La imagen satelital: solo una radiografía</h2>
+    <p class="text-light">La observación de las imágenes satelitales nocturnas no permiten hacer inferencias instantáneas, aunque sí aportan una capa de análisis al entendimiento de la complejidad de la ciudad como fenómeno social,
+      económico y físico. Como toda radiografía, en una imagen satelital la densidad lumínica se vuelve significante solo cuando se lee a la par de esas otras capas y densidades.</p>
+    <p class="text-light">Finalmente, en una ciudad norteamericana con una elevada concentración de la pobreza y la inseguridad -como Nueva Orleans- el factor racial es siempre determinante. Las siguiente gráfica muestra la distribución de edad y
+      raza de las víctimas de estos delitos:</p>
+  </section>
+
+  <!-- Create a div where the graph will take place -->
+  <div id="my_dataviz"></div>
+
+  <!-- Cuarta intro -->
+  <section class="cuarta_intro" id="seccion">
+    <h2 class="section-heading">El territorio de los Estados Unidos de América</h2>
+    <p class="text-light-dark">Desde la perspectiva de estas distribuciones y debido a su composición demográfica, en Nueva Orleans se acentúa un hecho histórico que sigue definiendo a los Estados Unidos. Así lo muestra la
+      siguiente gráfica donde se integran los datos de toda la nación, recolectados po Washington Post:</p>
+    <p class="text-light-dark"></p>
+  </section>
+
+  <!-- div para la página del segundo gráfico -->
+  <div id="my_dataviz2">
+    <iframe src="grafica2.html" width="100%" height="700"></iframe>
+
+  </div>
+
+  <!-- créditos -->
+  <section class="cierre" id="seccion">
+    <p class="text-extra-light">un proyecto de visualización de datos de víctor alcérreca</p>
+    <p class="text-extra-light">2021</p>
+  </section>
+
+  <!-- Barra de información -->
+  <div class="topnav">
+
+    <!-- Centered link -->
+    <div class="topnav-centered">
+      <a href="#home" class="active">inicio</a>
+    </div>
+
+    <!-- Left-aligned links (default) -->
+    <a href="https://www3.centro.edu.mx/" target="_blank">CENTRO</a>
+    <a href="https://www3.centro.edu.mx/Posgrados/visualizacion-de-datos.html" target="_blank">EVD.2021</a>
+
+    <!-- Right-aligned links -->
+    <div class="topnav-right">
+      <a href="https://twitter.com/vicpolar" target="_blank">@twitter</a>
+      <a href="mailto: valcerreca@centro.edu.mx">correo</a>
+    </div>
+
+
+
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
+    <script>
+      /* CARGA Y CONSTRUCCIÓN DE MAPAS */
+      mapboxgl.accessToken =
+        'pk.eyJ1IjoidmljdG9yLWFtIiwiYSI6ImNrcm1xcXg1Zzd3Mjcydm84M29vZzR4bjIifQ.OhwA9IYEsX2LFCJ99YXdug';
+
+      /* mapa antes (izquierda) */
+      const beforeMap = new mapboxgl.Map({
+        container: 'before',
+        style: 'mapbox://styles/victor-am/cksntaeo52fte17o13p9uslgq',
+        center: [-90.035, 29.985],
+        zoom: 11
+      });
+
+      /* Inhabilitar el scrolling */
+      beforeMap.scrollZoom.disable();
+      beforeMap.dragPan.disable();
+      beforeMap.doubleClickZoom.disable();
+
+      /* mapa después (derecha) */
+      const afterMap = new mapboxgl.Map({
+        container: 'after',
+        style: 'mapbox://styles/victor-am/cksmfzpwt146x18qjfm0l33oz',
+        center: [-90.035, 29.985],
+        zoom: 11
+      });
+
+      /* Inhabilitar el scrolling */
+      afterMap.scrollZoom.disable();
+      afterMap.dragPan.disable();
+      afterMap.doubleClickZoom.disable();
+      /* contenedor */
+      const container = '#map-container';
+      /* mapa final */
+      const map = new mapboxgl.Compare(beforeMap, afterMap, container, {});
+    </script>
+
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoidmljdG9yLWFtIiwiYSI6ImNrcm1xcXg1Zzd3Mjcydm84M29vZzR4bjIifQ.OhwA9IYEsX2LFCJ99YXdug';
+      const popmap = new mapboxgl.Map({
+        container: 'popmap',
+        style: 'mapbox://styles/victor-am/cksv2l9zx5qih17nxp6t5c72b',
+        center: [-90.052, 29.981],
+        zoom: 11.39
+      });
+
+      /*Add an event listener that runs when a user clicks on the map element.*/
+      popmap.on('click', ({
+        point
+      }) => {
+        // If the user clicked on one of your markers, get its information.
+        const features = popmap.queryRenderedFeatures(point, {
+          layers: ['nyu-2451-42181-75wn5e']
+        });
+        if (!features.length) {
+          return;
+        }
+        const feature = features[0];
+        /* crear pop up, especificar propiedades*/
+        const popup = new mapboxgl.Popup({
+            offset: [0, -15]
+          })
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML(
+            `<p>${feature.properties.victim_fir}</p><p>Age: ${feature.properties.victim_age}</p><p>Race: ${feature.properties.victim_rac}</p><p>Sex: ${feature.properties.victim_sex}</p><p>${feature.properties.dispositio}</p>`
+          )
+          .addTo(popmap);
+      });
+    </script>
+    <script src="violinjitter.js"></script>
+</body>
+
+</html>
